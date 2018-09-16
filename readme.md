@@ -1,10 +1,12 @@
 I always had trouble understanding why the code quality is important, I would refuse to spend time on this. But recently I found myself in sticky situation over and over because of the quality. If the quality was good, then I would not have to spend million seconds thinking about the problem and structure. Thus I learned mocha, chai, browser automation libraries like puppeteer. But soon I had problems with the CI and code quality checking tools and had a very hard time figuring out how to integrate all these newly acquired knowledge into the projects.
 
+I would feel empty when I saw nice delicious badges on other repos and some repos had multiple green ones and my repos were almost empty, the code was undocumented and such newbie stuff.
+
 Then it hit me, I could just create a sample repo from beginning with everything I want step by step and apply my knowledge there at very basic level so I can repeatedly use same process for other projects and relieve my stress over time. That's how this repo was born.
 
 The result is awesone and I got to add some cool badges too just like others,
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/aaed21c377f74845a3782c6fa6bee794)](https://www.codacy.com/app/entrptaher/mocha-ci-test) ![](https://circleci.com/gh/entrptaher/mocha-ci-test.png?circle-token=ec08dc816e661032cb41aa926f04bfce45a7c523)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/aaed21c377f74845a3782c6fa6bee794)](https://www.codacy.com/app/entrptaher/mocha-ci-test) ![CircleCI badge](https://img.shields.io/circleci/project/github/entrptaher/mocha-ci-test/master.svg)
 
 # Prefech
 
@@ -97,4 +99,13 @@ That wasn't hard, was it?
 # It triggers on every commit
 It will be very bad to trigger hundreds or thousands of tests on every commit/push. Sometimes you will just update the readme files and won't want to trigger things. And sometimes you will want to trigger only after making a major change. To prevent such worse things from happening, make sure to push to a seperate branch and do pull request only if you are satisfied with current code changes. Merging to master branch will trigger the build, which also can be setup as various webhooks and breaking measurements.
 
-So far this repo did not need such a big readme, but I ended up writing it because I was very lazy at writing documentations and ended up confused whenever I needed some script from some old repo to use. Later I will be able to extend this repo with process management, queue management, docker builds and server deployments. So much potential.
+So far this repo did not need such a big readme, but I ended up writing it because I was very lazy at writing documentations and ended up confused whenever I needed some script from some old repo to use. 
+
+Later I will be able to extend this repo with awesome things like,
+- process management, 
+- queue management, 
+- docker builds, 
+- code coverage
+- server deployments. 
+
+So much potential!
