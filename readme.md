@@ -1,3 +1,11 @@
+# Mocha and Puppeteer on CirclCI
+<p align="center">
+  <img height="200" src="screenshots/mocha.svg">
+  <img height="200" src="screenshots/puppeteer.png">
+  <img height="200" src="screenshots/circleci.svg">
+</p>
+
+# Prefetch
 I always had trouble understanding why the code quality is important, I would refuse to spend time on this. But recently I found myself in sticky situation over and over because of the quality. If the quality was good, then I would not have to spend million seconds thinking about the problem and structure. Thus I learned mocha, chai, browser automation libraries like puppeteer. But soon I had problems with the CI and code quality checking tools and had a very hard time figuring out how to integrate all these newly acquired knowledge into the projects.
 
 I would feel empty when I saw nice delicious badges on other repos and some repos had multiple green ones and my repos were almost empty, the code was undocumented and such newbie stuff.
@@ -8,7 +16,7 @@ The result is awesone and I got to add some cool badges too just like others,
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/aaed21c377f74845a3782c6fa6bee794)](https://www.codacy.com/app/entrptaher/mocha-ci-test) ![CircleCI badge](https://img.shields.io/circleci/project/github/entrptaher/mocha-ci-test/master.svg)
 
-# Prefech
+# What this is
 
 A sample repo to show how mocha, puppeteer and a ci can be used to automate various tests. Maybe an automation script was created, but depending on the size of project even that script should be tested to make sure everything works as expected when there is a commit pushed. 
 
