@@ -43,6 +43,8 @@ You do not need to test every single thing on automation scripts. Just make sure
 
 We will create the test script with the actual user flow in mind. Check the `test/basic.js` for test code. 
 
+![Mocha test](screenshots/mocha-test.png)
+
 ## Creating/Preparing CI environment
 
 Headless is a big factor on browsing and testing. Sometimes headless will leave a big footprint and get caught as bot, otherwise it's perfect for testing own websites where we can explicitly exclude it for testing. Enabling headless will take 6+ seconds to launch on CI environment sometimes, while disabling headless will reduce the time to 1 second. It can be optimized and hacked thru. While this doesn't seem like a big deal, it is indeed a big deal if you have a tight budget and CI costs are really high. Most CI gives you free time to run, but it will quickly add up where you have almost limited resource.
@@ -50,6 +52,11 @@ Headless is a big factor on browsing and testing. Sometimes headless will leave 
 CircleCI has `node:8.12.0-browsers` and other similar tags that includes the required libraries for headless and xvfb display. Just using their wizerd is enough to get you going. 
 
 Check out `.circleci/config.yml` for the code.
+
+![CircleCI Wizerd](screenshots/circleci-steps.png)
+
+The result looks beautiful,
+![CircleCI example](screenshots/circleci-results.png)
 
 ## Final steps
 
