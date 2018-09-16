@@ -33,9 +33,9 @@ Basically what we will do is,
 - Close browser and cleanup the processes
 - Return the data
 
-Check out the `app/index.js` for the commented out code. 
+Check out the `app/grab-data.js` for the commented out code. 
 
-## Creating actual/automation script
+## Creating test script
 
 When using unit tests, it's important to use timeouts. Make sure to exit the tests, and use proper timeout. Recent mocha will not exit the tests, in that case or in a case where you have infinite timeout, you might end up with a huge cost for the test getting stuck. Mocha by default will run tests one by one. If you want to try asyncronous tests, you can use Ava. Both are fantastic in their own way, popular and has huge support.
 
@@ -45,13 +45,32 @@ We will create the test script with the actual user flow in mind. Check the `tes
 
 ![Mocha test](screenshots/mocha-test.png)
 
+## Code linting
+
+Sometimes you want to make sure the quality of the work is well and you are not pushing garbaze inconsistant code to your repo. If you have multiple contributors to the repo you can even make sure their code passes all linting tests (excluding all eslint-disable hacks), and it returns safely. 
+Thus we are simply gonna use `eslint --init`, and follow the wizard to install airbnb rules, and then `eslint --fix . --ext .js` for auto fixing basic problems. 
+
+Also we can include these in the scripts inside `package.json` and simply call it later on. 
+
+Since we have mocha and node as target, we have to manually edit things a bit and add `node` and `mocha` as the target environment. Otherwise it will throw errors like,
+
+```
+'describe' is not defined 
+```
+
+And since we are using browser code inside puppeteer, it will throw errors like how `document is not defined` and such. We need to include `browser` as targets too, or apply workarounds.
+
+We are all good once we put and lint it. It might throw on some small warnings about best practices, we can fix them if we want, or move on.
+
 ## Creating/Preparing CI environment
 
 Headless is a big factor on browsing and testing. Sometimes headless will leave a big footprint and get caught as bot, otherwise it's perfect for testing own websites where we can explicitly exclude it for testing. Enabling headless will take 6+ seconds to launch on CI environment sometimes, while disabling headless will reduce the time to 1 second. It can be optimized and hacked thru. While this doesn't seem like a big deal, it is indeed a big deal if you have a tight budget and CI costs are really high. Most CI gives you free time to run, but it will quickly add up where you have almost limited resource.
 
 CircleCI has `node:8.12.0-browsers` and other similar tags that includes the required libraries for headless and xvfb display. Just using their wizerd is enough to get you going. 
 
-Check out `.circleci/config.yml` for the code.
+We will need to include the linting, and then we will run the actual test, make sure it's good quality code and works well, without running it ourselves on our own machine. We can even apply the fixing if we are brave enough.
+
+Check out `.circleci/config.yml` for the code. 
 
 ![CircleCI Wizerd](screenshots/circleci-steps.png)
 
