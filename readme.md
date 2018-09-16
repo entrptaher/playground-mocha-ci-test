@@ -1,3 +1,11 @@
+I always had trouble understanding why the code quality is important, I would refuse to spend time on this. But recently I found myself in sticky situation over and over because of the quality. If the quality was good, then I would not have to spend million seconds thinking about the problem and structure. Thus I learned mocha, chai, browser automation libraries like puppeteer. But soon I had problems with the CI and code quality checking tools and had a very hard time figuring out how to integrate all these newly acquired knowledge into the projects.
+
+Then it hit me, I could just create a sample repo from beginning with everything I want step by step and apply my knowledge there at very basic level so I can repeatedly use same process for other projects and relieve my stress over time. That's how this repo was born.
+
+The result is awesone and I got to add some cool badges too just like others,
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/aaed21c377f74845a3782c6fa6bee794)](https://www.codacy.com/app/entrptaher/mocha-ci-test) ![](https://circleci.com/gh/entrptaher/mocha-ci-test.png?circle-token=ec08dc816e661032cb41aa926f04bfce45a7c523)
+
 # Prefech
 
 A sample repo to show how mocha, puppeteer and a ci can be used to automate various tests. Maybe an automation script was created, but depending on the size of project even that script should be tested to make sure everything works as expected when there is a commit pushed. 
@@ -45,7 +53,9 @@ We will create the test script with the actual user flow in mind. Check the `tes
 
 ![Mocha test](screenshots/mocha-test.png)
 
-## Code linting
+## Code quality 
+
+### Linting
 
 Sometimes you want to make sure the quality of the work is well and you are not pushing garbaze inconsistant code to your repo. If you have multiple contributors to the repo you can even make sure their code passes all linting tests (excluding all eslint-disable hacks), and it returns safely. 
 Thus we are simply gonna use `eslint --init`, and follow the wizard to install airbnb rules, and then `eslint --fix . --ext .js` for auto fixing basic problems. 
@@ -61,6 +71,10 @@ Since we have mocha and node as target, we have to manually edit things a bit an
 And since we are using browser code inside puppeteer, it will throw errors like how `document is not defined` and such. We need to include `browser` as targets too, or apply workarounds.
 
 We are all good once we put and lint it. It might throw on some small warnings about best practices, we can fix them if we want, or move on.
+
+### Other quality checks
+
+If not enough, we can use other code quality checking tools such as `codacy`. All we have to do is add the project and it will do everything else itself. It will clone project, detect programming languages, run various code patterms and calculate project metrics. Finally it will give us a project certification with a grade A to F, A being best, F being worst. The sample repo might get A at beginning, or an F. But if we are not careful enough, it will scream at us later on just like the other tools we are using.
 
 ## Creating/Preparing CI environment
 
