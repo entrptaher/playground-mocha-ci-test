@@ -2,8 +2,8 @@ const { expect } = require("chai");
 const app = require("../app");
 
 describe("tests example website", function() {
-  this.timeout(60000);
-  
+  this.timeout(30000);
+
   it("browses the website", async function() {
     const { title, outerHTML } = await app();
     this.title = title;
