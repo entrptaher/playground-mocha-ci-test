@@ -61,6 +61,8 @@ You do not need to test every single thing on automation scripts. Just make sure
 
 We will create the test script with the actual user flow in mind. Check the `test/basic.js` for test code. 
 
+The result:
+
 ![Mocha test](screenshots/mocha-test.png)
 
 ## Code quality 
@@ -72,15 +74,15 @@ Thus we are simply gonna use `eslint --init`, and follow the wizard to install a
 
 Also we can include these in the scripts inside `package.json` and simply call it later on. 
 
-Since we have mocha and node as target, we have to manually edit things a bit and add `node` and `mocha` as the target environment. Otherwise it will throw errors like,
-
-```
-'describe' is not defined 
-```
+Since we have mocha and node as target, we have to manually edit things a bit and add `node` and `mocha` as the target environment. Otherwise it will throw errors like, `'describe' is not defined`.
 
 And since we are using browser code inside puppeteer, it will throw errors like how `document is not defined` and such. We need to include `browser` as targets too, or apply workarounds.
 
 We are all good once we put and lint it. It might throw on some small warnings about best practices, we can fix them if we want, or move on.
+
+The result:
+
+![](screenshots/linting.png)
 
 ### Other quality checks
 
