@@ -70,11 +70,8 @@ CircleCI has `node:8.12.0-browsers` and other similar tags that includes the req
 
 We will need to include the linting, and then we will run the actual test, make sure it's good quality code and works well, without running it ourselves on our own machine. We can even apply the fixing if we are brave enough.
 
-Check out `.circleci/config.yml` for the code. 
+Check out `.circleci/config.yml` for the code. The result looks beautiful, except it won't if all tests were ended in red.
 
-![CircleCI Wizerd](screenshots/circleci-steps.png)
-
-The result looks beautiful,
 ![CircleCI example](screenshots/circleci-results.png)
 
 ## Final steps
